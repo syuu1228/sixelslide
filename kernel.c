@@ -1,5 +1,4 @@
 #include "com.h"
-#include "power.h"
 
 extern int _binary_slide_001_txt_start;
 extern int _binary_slide_001_txt_end;
@@ -31,5 +30,4 @@ void kernel_main(void) {
     key = com_getc();
     com_putu(key);
     com_putc('\n');
-    poweroff();
 }
