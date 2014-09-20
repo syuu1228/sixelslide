@@ -9,6 +9,7 @@ Prerequires:
 - ImageMagick
 - GNU Make
 - wget
+- mlterm
 - Linux/x86_64(for other OSes, you'll need to build cross compiler on your own)
 
 Place your slide on this directory and name it slide.pdf, then build binary:
