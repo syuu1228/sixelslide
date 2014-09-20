@@ -1,4 +1,4 @@
-all: kernel.elf
+all: sixelslide
 
 CFLAGS=-Wall -Werror -std=gnu11
 CC=i686-elf-4.9.0-Linux-x86_64/bin/i686-elf-gcc
@@ -8,15 +8,15 @@ AS=i686-elf-4.9.0-Linux-x86_64/bin/i686-elf-as
 boot.o: boot.s
 	$(AS) -c boot.s -o boot.o
 
-kernel.elf: boot.o kernel.o io.o com.o power.o slide.001.o slide.002.o slide.003.o
-	$(CC) -T linker.ld -o kernel.elf -ffreestanding -nostdlib $^ -lgcc
+sixelslide: boot.o sixelslide.o io.o com.o power.o
+	$(CC) -T sixelslide.ld -o sixelslide -ffreestanding -nostdlib $^ -lgcc
 
 compiler:
 	wget http://newos.org/toolchains/i686-elf-4.9.0-Linux-x86_64.tar.xz
 	tar xpf i686-elf-4.9.0-Linux-x86_64.tar.xz
 
-run: kernel.elf
-	qemu-system-i386 -nographic -kernel kernel.elf
+run: sixelslide
+	qemu-system-i386 -nographic -kernel sixelslide
 
 clean:
-	rm -f *.o kernel.elf
+	rm -f *.o sixelslide

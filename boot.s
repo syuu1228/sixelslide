@@ -20,7 +20,7 @@ stack_top:
 .type _start, @function
 _start:
     movl $stack_top, %esp
-    call kernel_main
+    call main
     call poweroff
 
 .size _start, . - _start

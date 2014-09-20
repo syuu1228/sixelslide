@@ -7,7 +7,7 @@ extern int _binary_slide_002_txt_end;
 extern int _binary_slide_003_txt_start;
 extern int _binary_slide_003_txt_end;
 
-void kernel_main(void) {
+int main(void) {
     char *p, *end, key;
     p = (char *)&_binary_slide_001_txt_start;
     end = (char *)&_binary_slide_001_txt_end;
