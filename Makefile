@@ -17,7 +17,7 @@ slide-0.png: slide.pdf
 
 .SUFFIXES: .png .txt .o
 .png.txt:
-	img2sixel -8 $< > $@
+	img2sixel -8 -w 85% $< > $@
 .txt.o:
 	$(LD) -r -b binary -o $@ $<
 
