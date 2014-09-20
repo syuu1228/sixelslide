@@ -7,6 +7,7 @@ int main(void) {
     while (1) {
         char *p, *end, key;
 
+        com_putc('\b');
         p = slide_start[i];
         end = slide_end[i];
         while (p < end)
@@ -23,9 +24,14 @@ int main(void) {
             } else if (key == 'h' || key == 'k') {
                 i--;
                 break;
-            } else if (key == 'q')
+            } else if (key == 'q') {
                 return 0;
+            } else if (key == '1') {
+                i = 0;
+                break;
+            }
         }
+        com_putc(key);
         if (i < 0)
             i = 0;
         else if (i >= num_slides) {
