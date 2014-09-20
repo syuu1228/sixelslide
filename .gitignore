@@ -1,2 +1,8 @@
 i686-elf-4.9.0-Linux-x86_64.tar.xz
 i686-elf-4.9.0-Linux-x86_64/
+slide.c
+slide.h
+*.o
+*.png
+*.txt
+sixelslide
