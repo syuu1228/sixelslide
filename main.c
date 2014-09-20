@@ -4,7 +4,6 @@
 int main(void) {
     int i = 0;
 
-    com_putu(num_slides);
     while (1) {
         char *p, *end, key;
 
@@ -12,6 +11,10 @@ int main(void) {
         end = slide_end[i];
         while (p < end)
             com_putc(*p++);
+        com_putu(i+1);
+        com_putc('/');
+        com_putu(num_slides);
+        com_putc('\n');
         while(1) {
             key = com_getc();
             if (key == 'l' || key == 'j') {
